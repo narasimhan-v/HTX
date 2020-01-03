@@ -3352,7 +3352,7 @@ int htxd_option_method_get_run_time(char **command_result, htxd_command *p_comma
 
 	current_time = (int) time((time_t *) 0);
 	mdt_run_time = current_time - p_ecg_info_list->ecg_run_start_time; 
-	sprintf(*command_result, "Run_time = %d minutes %d seconds", mdt_run_time/60, mdt_run_time%60);
+	sprintf(*command_result, "Run_time = %d hours %d minutes %d seconds", mdt_run_time/3600, (mdt_run_time%3600)/60, mdt_run_time%60);
 
 
 	return 0;
